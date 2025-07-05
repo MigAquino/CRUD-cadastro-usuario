@@ -1,11 +1,7 @@
-
-# Cadastro de Usuarios
-
-Esse projeto foi desenvolvido para o meu aprendizado no desenvolvimento utilizando o Spring
-
-## Rodando localmente
-- #### Faca o download do arquivo .jar na ultima release
-
+# Cadastro de Usuários
+```http
+  java -jar cadastro-usuario-0.0.1-SNAPSHOT.jar
+```
 - #### Abra a Database no seu navegador com o link:
 
 ```http
@@ -13,16 +9,20 @@ Esse projeto foi desenvolvido para o meu aprendizado no desenvolvimento utilizan
 ```
 
 #### Dados de acesso da database:
-| Usuario   | Senha      | Descrição                           |
+| Usuário   | Senha      | Descrição                           |
 | :---------- | :--------- | :---------------------------------- |
 | `miguel` | `123` | **Obrigatório**. Login de acesso |
+
+| JDCB URL   | Driver Class    | Descrição                           |
+| :---------- | :--------- | :---------------------------------- |
+| `org.h2.Driver` | `jdbc:h2:mem:usuarios` | **Obrigatório**. Driver e URL da Database |
 
 
 ## Documentação da API
 #### Dicas de uso
- - Recomendado utilizar o Postman para executar as funcoes abaixo
+ - Recomendado utilizar o Postman para executar as funções abaixo
 
-#### Cadastra um Usuario
+#### Cadastra um Usuário
 
 ```http
   POST localhost8081/usuario
@@ -33,7 +33,7 @@ Esse projeto foi desenvolvido para o meu aprendizado no desenvolvimento utilizan
 | `email` | `string` | **Obrigatório**. Email do Usuario |
 | `nome` | `string` | **Obrigatório**. Nome do Usuario |
 
-#### Retorna um usuario por email
+#### Retorna um usuário por email
 
 ```http
   GET localhost8081/usuario?email=email_do_usuario
@@ -41,23 +41,23 @@ Esse projeto foi desenvolvido para o meu aprendizado no desenvolvimento utilizan
 
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
-| `email`      | `string` | **Obrigatório**. O Email do usuario que quer buscar |
+| `email`      | `string` | **Obrigatório**. O Email do usuário que quer buscar |
 
-#### Atualiza o cadastro de um usuario
+#### Atualiza o cadastro de um usuário
 
 ```http
   POST localhost8081/usuario?id=id_do_usuario
 ```
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
-| `id`      | `Integer` | **Obrigatório**. O id do usuario que quer atualizar |
+| `id`      | `Integer` | **Obrigatório**. O id do usuário que quer atualizar |
 
 | Body   | Tipo       | Descrição                           |
 | :---------- | :--------- | :---------------------------------- |
 | `email` | `string` | **Opcional**. Email do Usuario |
 | `nome` | `string` | **Opcional**. Nome do Usuario |
 
-#### Deleta um usuario
+#### Deleta um usuário
 
 ```http
   DELETE localhost:8081/usuario?email=email_do_usuario
@@ -65,4 +65,4 @@ Esse projeto foi desenvolvido para o meu aprendizado no desenvolvimento utilizan
 
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
-| `email`      | `string` | **Obrigatório**. O Email do usuario que você quer deletar |
+| `email`      | `string` | **Obrigatório**. O Email do usuário que você quer deletar |
